@@ -8,13 +8,18 @@ import MovieLists from "../MovieLists/MovieLists";
 
 function Home() {
   const movies = useSelector(getAllMovies);
-  const dispatch = useDispatch();
   const [searchText, setSearchText] = useState("pokemon");
   const [page, setPage] = useState(1);
   const [selectType, setSelectType] = useState(0);
+  const [selectYear, setSelectYear] = useState(0);
+  const dispatch = useDispatch();
 
   const optionChange = (e) => {
     setSelectType(e.target.value);
+  };
+
+  const yearChange = (e) => {
+    setSelectYear(e.target.value);
   };
 
   const fetchAllMovies = async () => {
@@ -76,6 +81,18 @@ function Home() {
           className=" search-input w-100"
           onChange={(e) => setSearchText(e.target.value)}
         />
+        <select
+          className="options sortBy"
+          onChange={yearChange}
+          value={selectYear}
+        >
+          <option value="0">Sort By Year</option>
+          {movies.Search?.map((movie, index) => (
+            <option key={index} value={movie.Year}>
+              {movie.Year}
+            </option>
+          ))}
+        </select>
       </div>
 
       <div className="d-flex mt-5 justify-content-center align-items-center flex-column w-75">
@@ -93,7 +110,7 @@ function Home() {
 
         {movies.Response === "True" && movies.Search.length > 0 ? (
           <>
-            <MovieLists setPage={setPage} page={page} />
+            <MovieLists setPage={setPage} page={page} selectYear={selectYear} />
           </>
         ) : (
           <div className="mt-3 text-white">
