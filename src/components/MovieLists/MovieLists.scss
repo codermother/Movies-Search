@@ -1,0 +1,21 @@
+@import "../../common/colors.scss";
+
+.row {
+    display: flex;
+  }
+  
+.row > div {
+    padding: 5px;
+    border: 1px solid white;
+}
+
+.movies-header{
+    color: $font-secondary;
+    font-size: large;
+}
+
+.movie-list{
+    color: $font-primary;
+    padding: 5px 10px !important ;
+}
+

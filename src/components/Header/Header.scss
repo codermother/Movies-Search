@@ -1,0 +1,21 @@
+@import "../../common/colors.scss";
+
+.header {
+    background-color: $secondary-color ;
+    height: 72px;
+    padding: 0px 40px;
+}
+
+.logo {
+    color: $font-primary;
+    font-weight: 600;
+}
+
+.logo:hover{
+    color: $font-secondary
+}
+
+.user-image {
+    font-size: 32px;
+    color: $font-primary;
+}

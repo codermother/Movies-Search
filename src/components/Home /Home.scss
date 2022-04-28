@@ -1,0 +1,19 @@
+@import "../../common/colors.scss";
+
+.movie-container:hover{
+    background-color: $secondary-color;
+}
+
+.search-input{
+    height: 32px;
+    border-radius: 5px;
+    padding-left: 100px;
+}
+
+.options{
+    height: 30px;
+    width: 80px;
+    position: absolute;
+    border-radius: 5px;
+    left: 0;
+}

@@ -1,0 +1,21 @@
+@import "../../common/colors.scss";
+.footer {
+  background: $secondary-color;
+  height: 72px;
+  color: $font-primary;
+}
+
+.footer-logo{
+    justify-content: center;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.social-icon-link{
+    color: $font-primary;
+    margin-left: 5px;
+}
+
+.social-icon-link:hover{
+    color: $font-secondary;
+}
